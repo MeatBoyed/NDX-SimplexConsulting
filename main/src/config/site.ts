@@ -5,23 +5,32 @@ import { SiteConfig } from "@/types"
 import { env } from "@/env.mjs"
 
 export const siteConfig: SiteConfig = {
-  name: "Next Entree",
-  author: "redpangilinan",
+  name: "Simplex Consulting",
+  author: "Simplex Consulting",
   description:
-    "Next.js 14+ starter template with app router, shadcn/ui, typesafe env, icons and configs setup.",
-  keywords: ["Next.js", "React", "Tailwind CSS", "Radix UI", "shadcn/ui"],
+    "Revolutionizing consulting with innovative, client-focused solutions. Simplex Consulting simplifies complexity to empower businesses for sustainable growth in the digital age.",
+  keywords: [
+    "Simplex Consulting",
+    "Consulting Services",
+    "Business Solutions",
+    "Digital Transformation",
+    "Sustainable Growth",
+    "Data-Driven Insights",
+    "Business Performance",
+    "Technology-Driven Strategies",
+  ],
   url: {
-    base: env.NEXT_PUBLIC_APP_URL,
-    author: "https://rdev.pro",
+    base: "https://simplexconsulting.co.za",
+    author: "https://nerfdesigns.com",
   },
   links: {
-    github: "https://github.com/redpangilinan/next-entree",
+    github: "", // Remove if not applicable
   },
-  ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
+  ogImage: "https://simplexconsulting.co.za/og.jpg",
 }
 
 export const SiteMetaData: Metadata = {
-  metadataBase: new URL("https://dminhvu.com"),
+  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -56,9 +65,9 @@ export const SiteMetaData: Metadata = {
     googleBot: "index, follow",
   },
   alternates: {
-    types: {
-      "application/rss+xml": "https://dminhvu.com/rss.xml",
-    },
+    // types: {
+    //   "application/rss+xml": "https://dminhvu.com/rss.xml",
+    // },
   },
   applicationName: siteConfig.name,
   appleWebApp: {
@@ -100,7 +109,7 @@ export const SiteMetaData: Metadata = {
         type: "image/png",
       },
       {
-        url: "/apple-icon-60x60.png",
+        url: "/apple-icon.png",
         sizes: "60x60",
         type: "image/png",
       },
@@ -111,50 +120,55 @@ export const SiteMetaData: Metadata = {
 
 export const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "Rivonia Hair Salon & Nail Care",
+  "@type": "ProfessionalService",
+  name: "Simplex Consulting",
   description:
-    "Discover expert hair styling, dreadlocks, wig treatments, and nail care services tailored for all at Rivonia Hair Salon & Nail Care.",
-  url: env.NEXT_PUBLIC_APP_URL, // Replace with the real website URL
-  image: "https://rivoniahairsalon.com/assets/og-image.png", // Replace with the real OG image URL
-  telephone: env.PHONE_NUMBER, // Replace with the salon's contact number
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Rivonia Central Shopping Centre, Rivonia Blvd",
-    addressLocality: "Johannesburg",
-    addressRegion: "Gauteng",
-    postalCode: "2128",
-    addressCountry: "ZA",
-  },
-  openingHours: "Mo-Sa 09:00-18:00, Su 10:00-15:00", // Adjust as per actual hours
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: -26.054711, // Replace with actual coordinates
-    longitude: 28.059805,
-  },
+    "Simplex Consulting revolutionizes the consulting industry with innovative, client-focused solutions, empowering businesses to excel in the digital age.",
+  url: "https://simplexconsulting.co.za", // Replace with the real website URL
+  image: "https://simplexconsulting.co.za/assets/og-image.png", // Replace with the actual OG image URL
+  telephone: env.PHONE_NUMBER, // Replace with Simplex Consulting's contact number
+  // address: {
+  //   "@type": "PostalAddress",
+  //   streetAddress: "123 Business Road",
+  //   addressLocality: "Johannesburg",
+  //   addressRegion: "Gauteng",
+  //   postalCode: "2000",
+  //   addressCountry: "ZA",
+  // },
+  // geo: {
+  //   "@type": "GeoCoordinates",
+  //   latitude: -26.2041, // Replace with actual coordinates
+  //   longitude: 28.0473,
+  // },
   sameAs: [
-    "https://www.facebook.com/RivoniaHairSalon", // Replace with actual links
-    "https://www.instagram.com/RivoniaHairSalon",
+    "https://www.linkedin.com/company/simplex-consulting", // Replace with Simplex Consulting's LinkedIn or social links
+    "https://twitter.com/simplexconsulting",
   ],
-  priceRange: "$$", // Adjust based on pricing
+  priceRange: "$$$", // Adjust based on pricing
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": env.NEXT_PUBLIC_APP_URL, // Replace with the main page URL
+    "@id": "https://simplexconsulting.co.za",
   },
-  headline: "Expert Hair and Nail Care in Rivonia | Rivonia Hair Salon",
-  dateCreated: "2024-11-21T08:00:00+02:00",
-  datePublished: "2024-11-21T08:00:00+02:00",
+  headline:
+    "Revolutionizing Consulting for the Digital Age | Simplex Consulting",
+  dateCreated: "2024-12-13T08:00:00+02:00",
+  datePublished: "2024-12-13T08:00:00+02:00",
   dateModified: new Date().toJSON(),
   author: {
     "@type": "Organization",
-    name: "Rivonia Hair Salon & Nail Care",
+    name: "Nerf Designs",
+    url: "https://nerfdesigns.com", // Your business website
+    logo: {
+      "@type": "ImageObject",
+      url: "https://nerfdesigns.com/assets/logo.png", // Replace with Nerf Designs' logo URL
+    },
   },
   publisher: {
     "@type": "Organization",
-    name: "Rivonia Hair Salon & Nail Care",
+    name: "Simplex Consulting",
     logo: {
       "@type": "ImageObject",
-      url: `${env.NEXT_PUBLIC_APP_URL}/assets/logo.png`, // Replace with the logo URL
+      url: "https://simplexconsulting.co.za/assets/logo.png", // Replace with Simplex Consulting's logo URL
     },
   },
   inLanguage: "en-ZA",
