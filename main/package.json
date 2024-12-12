@@ -11,7 +11,6 @@
     "format:check": "pnpm prettier ./src --check"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.5.1",
     "@hookform/resolvers": "^3.9.1",
     "@next/third-parties": "^15.0.3",
     "@radix-ui/react-checkbox": "^1.1.2",
@@ -26,6 +25,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
+    "framer-motion": "^11.14.1",
     "lucide-react": "^0.330.0",
     "next": "14.1.1",
     "next-themes": "^0.2.1",

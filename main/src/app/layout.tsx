@@ -2,7 +2,7 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import { ClerkProvider } from "@clerk/nextjs"
+import Image from "next/image"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
 import { env } from "@/env.mjs"
@@ -69,30 +69,40 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background antialiased",
-            inter.className
-          )}
-        >
-          <QueryProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
-              {process.env.NODE_ENV === "production" && (
-                <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_TAG_ID} />
-              )}
-              {children}
-            </ThemeProvider>
-          </QueryProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          "min-h-screen bg-background antialiased",
+          inter.className
+        )}
+      >
+        <QueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            forcedTheme="dark"
+            disableTransitionOnChange
+          >
+            {process.env.NODE_ENV === "production" && (
+              <GoogleAnalytics gaId={env.NEXT_PUBLIC_GA_TAG_ID} />
+            )}
+            <nav className="relative z-50 flex w-full items-center justify-center">
+              <div className="flex w-full max-w-5xl items-center justify-center md:justify-start">
+                <Image
+                  src="/custom-logo.svg"
+                  alt="Placeholder"
+                  width={100}
+                  height={100}
+                  className="object-cover"
+                />
+              </div>
+            </nav>
+
+            {children}
+          </ThemeProvider>
+        </QueryProvider>
+      </body>
+    </html>
   )
 }
