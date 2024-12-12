@@ -92,7 +92,7 @@ export default function ComingSoon() {
             transformation.
           </p>
 
-          <form
+          {/* <form
             onSubmit={handleSubmit}
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
@@ -113,7 +113,7 @@ export default function ComingSoon() {
             >
               Notify Me
             </motion.button>
-          </form>
+          </form> */}
         </motion.section>
       </div>
     </div>
